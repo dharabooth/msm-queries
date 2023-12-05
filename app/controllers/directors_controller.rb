@@ -16,7 +16,7 @@ class DirectorsController < ApplicationController
   end
 
   def junior
-    non_nulls = Director.all.where.not({ :dob => nil})
+    non_nulls = Director.where.not({ :dob => nil})
     organized_records = non_nulls.order({ :dob => :desc})
     @junior_director = organized_records.at(0)
 
